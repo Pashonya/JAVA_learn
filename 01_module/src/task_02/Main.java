@@ -8,6 +8,5 @@ public class Main {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss MM/dd/yyyy");
         LocalDateTime now = LocalDateTime.now();
         System.out.println(now.format(formatter));
-
     }
 }
