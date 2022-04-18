@@ -1,4 +1,5 @@
-package task_03;
+package task_01;
+
 
 public class Main {
     public Main() {
@@ -43,3 +44,4 @@ public class Main {
         System.out.println("Общая стоимость заправки: " + totalPrice + " руб.");
     }
 }
+
