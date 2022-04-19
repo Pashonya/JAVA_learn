@@ -3,12 +3,12 @@ package task_01;
 
 public class Main {
     public static void main(String[] args) {
-        int milkAmount = 2; // ml
-        int powderAmount = 2; // g
-        int eggsCount = 0; // items
+        int milkAmount = 1000; // ml
+        int powderAmount = 500; // g
+        int eggsCount = 20; // items
         int sugarAmount = 30; // g
         int oilAmount = 50; // ml
-        int appleCount = 6;
+        int appleCount = 10;
 
         int appleJuiceRequired = 5;
 
@@ -16,9 +16,10 @@ public class Main {
         // appleCount - 5
         boolean enoughApple = (appleCount >= appleJuiceRequired);
 
-        if (enoughApple){
+        if (enoughApple) {
             System.out.println("Яблочный сок");
-        } if (!enoughApple) {
+        }
+        if (!enoughApple) {
             System.out.println("Яблочный сок не приготовить. Нехватает яблок");
         }
 //powder - 400 g, sugar - 10 g, milk - 1 l, oil - 30 ml
@@ -27,105 +28,135 @@ public class Main {
         int milkPancakesRequired = 1000;
         int oilPancakesRequired = 30;
 
-        boolean enoughPowder = (powderAmount >= powderPancakesRequired);
-        boolean enoughSugar = (sugarAmount >= sugarPancakesRequired);
-        boolean enoughMilk = (milkAmount >= milkPancakesRequired);
-        boolean enoughOil = (oilAmount >= oilPancakesRequired);
+        boolean enoughPowderPancakes = (powderAmount >= powderPancakesRequired);
+        boolean enoughSugarPancakes = (sugarAmount >= sugarPancakesRequired);
+        boolean enoughMilkPancakes = (milkAmount >= milkPancakesRequired);
+        boolean enoughOilPancakes = (oilAmount >= oilPancakesRequired);
 
-        boolean hasError = false;
+        boolean hasErrorPancakes = false;
 
-        if (enoughPowder && enoughSugar && enoughMilk && enoughOil)
-            hasError = true;
+        if (enoughPowderPancakes && enoughSugarPancakes && enoughMilkPancakes && enoughOilPancakes)
+            hasErrorPancakes = true;
 
-        //пудра проверка
+            //пудра проверка
 
-        else if (!enoughPowder && enoughSugar && enoughMilk && enoughOil) {
+        else if (!enoughPowderPancakes && enoughSugarPancakes && enoughMilkPancakes && enoughOilPancakes) {
             System.out.println("Блинчики не приготовить. Нехватает: пудры");
-            hasError = true;
-        }
-
-        else if (!enoughPowder && !enoughSugar && enoughMilk && enoughOil) {
-                System.out.println("Блинчики не приготовить. Нехватает: пудры и сахара");
-                hasError = true;
-        }
-        else if (!enoughPowder && !enoughSugar && !enoughMilk && enoughOil) {
+            hasErrorPancakes = true;
+        } else if (!enoughPowderPancakes && !enoughSugarPancakes && enoughMilkPancakes && enoughOilPancakes) {
+            System.out.println("Блинчики не приготовить. Нехватает: пудры и сахара");
+            hasErrorPancakes = true;
+        } else if (!enoughPowderPancakes && !enoughSugarPancakes && !enoughMilkPancakes && enoughOilPancakes) {
             System.out.println("Блинчики не приготовить. Нехватает: пудры, сахара и молока");
-            hasError = true;
-        }
-        else if (!enoughPowder && !enoughSugar && !enoughMilk && !enoughOil) {
+            hasErrorPancakes = true;
+        } else if (!enoughPowderPancakes && !enoughSugarPancakes && !enoughMilkPancakes && !enoughOilPancakes) {
             System.out.println("Блинчики не приготовить. Нехватает: пудры, сахара, молока и масла");
-            hasError = true;
-        }
-        else if (!enoughPowder && enoughSugar && !enoughMilk && !enoughOil) {
+            hasErrorPancakes = true;
+        } else if (!enoughPowderPancakes && enoughSugarPancakes && !enoughMilkPancakes && !enoughOilPancakes) {
             System.out.println("Блинчики не приготовить. Нехватает: пудры, молока и масла");
-            hasError = true;
-        }
-        else if (!enoughPowder && !enoughSugar && enoughMilk && !enoughOil) {
+            hasErrorPancakes = true;
+        } else if (!enoughPowderPancakes && !enoughSugarPancakes && enoughMilkPancakes && !enoughOilPancakes) {
             System.out.println("Блинчики не приготовить. Нехватает: пудры, сахара и масла");
-            hasError = true;
-        }
-        else if (!enoughPowder && !enoughSugar && enoughMilk && !enoughOil) {
+            hasErrorPancakes = true;
+        } else if (!enoughPowderPancakes && !enoughSugarPancakes && enoughMilkPancakes && !enoughOilPancakes) {
             System.out.println("Блинчики не приготовить. Нехватает: пудры и масла");
-            hasError = true;
-        }
-        else if (!enoughPowder && enoughSugar && !enoughMilk && enoughOil) {
+            hasErrorPancakes = true;
+        } else if (!enoughPowderPancakes && enoughSugarPancakes && !enoughMilkPancakes && enoughOilPancakes) {
             System.out.println("Блинчики не приготовить. Нехватает: пудры и молока");
-            hasError = true;
+            hasErrorPancakes = true;
         }
 
         //сахар проверка
 
-        else if (enoughPowder && !enoughSugar && enoughMilk && enoughOil) {
+        else if (enoughPowderPancakes && !enoughSugarPancakes && enoughMilkPancakes && enoughOilPancakes) {
             System.out.println("Блинчики не приготовить. Нехватает: сахара");
-            hasError = true;
-        }
-        else if (enoughPowder && !enoughSugar && !enoughMilk && enoughOil) {
+            hasErrorPancakes = true;
+        } else if (enoughPowderPancakes && !enoughSugarPancakes && !enoughMilkPancakes && enoughOilPancakes) {
             System.out.println("Блинчики не приготовить. Нехватает: сахара и молока");
-            hasError = true;
-        }
-        else if (enoughPowder && !enoughSugar && enoughMilk && !enoughOil) {
+            hasErrorPancakes = true;
+        } else if (enoughPowderPancakes && !enoughSugarPancakes && enoughMilkPancakes && !enoughOilPancakes) {
             System.out.println("Блинчики не приготовить. Нехватает: сахара и масла");
-            hasError = true;
-        }
-        else if (enoughPowder && !enoughSugar && !enoughMilk && !enoughOil) {
+            hasErrorPancakes = true;
+        } else if (enoughPowderPancakes && !enoughSugarPancakes && !enoughMilkPancakes && !enoughOilPancakes) {
             System.out.println("Блинчики не приготовить. Нехватает: сахара, молока и масла");
-            hasError = true;
+            hasErrorPancakes = true;
         }
 
         // молоко проверка
 
-        else if (enoughPowder && enoughSugar && !enoughMilk && enoughOil) {
+        else if (enoughPowderPancakes && enoughSugarPancakes && !enoughMilkPancakes && enoughOilPancakes) {
             System.out.println("Блинчики не приготовить. Нехватает: молока");
-            hasError = true;
-        }
-        else if (enoughPowder && enoughSugar && !enoughMilk && !enoughOil) {
+            hasErrorPancakes = true;
+        } else if (enoughPowderPancakes && enoughSugarPancakes && !enoughMilkPancakes && !enoughOilPancakes) {
             System.out.println("Блинчики не приготовить. Нехватает: молока и масла");
-            hasError = true;
+            hasErrorPancakes = true;
         }
 
         // масло проверка
 
-        else if (enoughPowder && enoughSugar && enoughMilk && !enoughOil) {
+        else if (enoughPowderPancakes && enoughSugarPancakes && enoughMilkPancakes && !enoughOilPancakes) {
             System.out.println("Блинчики не приготовить. Нехватает: масла");
-            hasError = true;
+            hasErrorPancakes = true;
         }
 
-        if (enoughPowder && enoughSugar && enoughMilk && enoughOil) {
+        if (enoughPowderPancakes && enoughSugarPancakes && enoughMilkPancakes && enoughOilPancakes) {
             System.out.println("Блинчики");
         }
+
+        //milk - 300 ml, powder - 5 g, eggs - 5
 
         int milkOmeletteRequired = 300;
         int powderOmeletteRequired = 5;
         int eggsOmeletteRequired = 5;
 
-        if (milkAmount >= milkOmeletteRequired &&
-                powderAmount >= powderOmeletteRequired &&
-                eggsCount >= eggsOmeletteRequired) {
+        boolean enoughMilkOmelette = (milkAmount >= milkOmeletteRequired);
+        boolean enoughPowderOmelette = (powderAmount >= powderOmeletteRequired);
+        boolean enoughEggsOmelette = (eggsCount >= eggsOmeletteRequired);
 
-            //milk - 300 ml, powder - 5 g, eggs - 5
+
+        boolean hasErrorOmelette = false;
+
+        if (enoughMilkOmelette && enoughPowderOmelette && enoughEggsOmelette)
+            hasErrorOmelette = true;
+
+        //молоко проверка
+
+        else if (!enoughMilkOmelette && enoughPowderOmelette && enoughEggsOmelette) {
+            System.out.println("Омлет не приготовить. Нехватает: молока");
+            hasErrorOmelette = true;
+        }
+        else if (!enoughMilkOmelette && !enoughPowderOmelette && enoughEggsOmelette) {
+            System.out.println("Омлет не приготовить. Нехватает: молока и пудры");
+            hasErrorOmelette = true;
+        }
+        else if (!enoughMilkOmelette && enoughPowderOmelette && !enoughEggsOmelette) {
+            System.out.println("Омлет не приготовить. Нехватает: молока и яиц");
+            hasErrorOmelette = true;
+        }
+        else if (!enoughMilkOmelette && !enoughPowderOmelette && !enoughEggsOmelette) {
+            System.out.println("Омлет не приготовить. Нехватает: молока, пудры и яиц");
+            hasErrorOmelette = true;
+        }
+
+        //пудра проверка
+
+        else if (enoughMilkOmelette && !enoughPowderOmelette && enoughEggsOmelette) {
+            System.out.println("Омлет не приготовить. Нехватает: пудры");
+            hasErrorOmelette = true;
+        }
+        else if (enoughMilkOmelette && !enoughPowderOmelette && !enoughEggsOmelette) {
+            System.out.println("Омлет не приготовить. Нехватает: пудры и яиц");
+            hasErrorOmelette = true;
+        }
+
+        //яйца проверка
+
+        else if (enoughMilkOmelette && enoughPowderOmelette && !enoughEggsOmelette) {
+            System.out.println("Омлет не приготовить. Нехватает: яиц");
+            hasErrorOmelette = true;
+        }
+        if (enoughMilkOmelette && enoughPowderOmelette && enoughEggsOmelette ) {
             System.out.println("Омлет");
-        } else {
-            System.out.println("Нехватает ингредиентов для омлета");
         }
 
         //apples - 3, milk - 100 ml, powder - 300 g, eggs - 4
@@ -135,13 +166,89 @@ public class Main {
         int powderApplePieRequired = 300;
         int eggsApplePieRequired = 4;
 
-        if (appleCount >= applesApplePieRequired &&
-                milkAmount >= milkApplePieRequired &&
-                powderAmount >= powderApplePieRequired &&
-                eggsCount >= eggsApplePieRequired) {
+        boolean enoughApplesApplePie = (appleCount >= applesApplePieRequired);
+        boolean enoughMilkApplePie = (milkAmount >= milkApplePieRequired);
+        boolean enoughPowderApplePie = (powderAmount >= powderApplePieRequired);
+        boolean enoughEggsApplePie = (eggsCount >= eggsApplePieRequired);
+
+
+        boolean hasErrorApplePie = false;
+
+        if (enoughApplesApplePie && enoughMilkApplePie && enoughPowderApplePie && enoughEggsApplePie)
+            hasErrorApplePie = true;
+
+        //яблоки проверка
+
+        else if (!enoughApplesApplePie && enoughMilkApplePie && enoughPowderApplePie && enoughEggsApplePie) {
+            System.out.println("Яблочный пирог не приготовить. Нехватает: яблок");
+            hasErrorApplePie = true;
+        }
+        else if (!enoughApplesApplePie && !enoughMilkApplePie && enoughPowderApplePie && enoughEggsApplePie) {
+            System.out.println("Яблочный пирог не приготовить. Нехватает: яблок и молока");
+            hasErrorApplePie = true;
+        }
+        else if (!enoughApplesApplePie && enoughMilkApplePie && !enoughPowderApplePie && enoughEggsApplePie) {
+            System.out.println("Яблочный пирог не приготовить. Нехватает: яблок и пудры");
+            hasErrorApplePie = true;
+        }
+        else if (!enoughApplesApplePie && enoughMilkApplePie && enoughPowderApplePie && !enoughEggsApplePie) {
+            System.out.println("Яблочный пирог не приготовить. Нехватает: яблок и яиц");
+            hasErrorApplePie = true;
+        }
+        else if (!enoughApplesApplePie && !enoughMilkApplePie && !enoughPowderApplePie && enoughEggsApplePie) {
+            System.out.println("Яблочный пирог не приготовить. Нехватает: яблок, молока и пудры");
+            hasErrorApplePie = true;
+        }
+        else if (!enoughApplesApplePie && enoughMilkApplePie && !enoughPowderApplePie && !enoughEggsApplePie) {
+            System.out.println("Яблочный пирог не приготовить. Нехватает: яблок, пудры и яиц");
+            hasErrorApplePie = true;
+        }
+        else if (!enoughApplesApplePie && !enoughMilkApplePie && enoughPowderApplePie && !enoughEggsApplePie) {
+            System.out.println("Яблочный пирог не приготовить. Нехватает: яблок, молока и яиц");
+            hasErrorApplePie = true;
+        }
+        else if (!enoughApplesApplePie && !enoughMilkApplePie && !enoughPowderApplePie && !enoughEggsApplePie) {
+            System.out.println("Яблочный пирог не приготовить. Нехватает: яблок, молока, пудры и яиц");
+            hasErrorApplePie = true;
+        }
+
+        //молоко проверка
+
+        else if (enoughApplesApplePie && !enoughMilkApplePie && enoughPowderApplePie && enoughEggsApplePie) {
+            System.out.println("Яблочный пирог не приготовить. Нехватает: молока");
+            hasErrorApplePie = true;
+        }
+        else if (enoughApplesApplePie && !enoughMilkApplePie && !enoughPowderApplePie && enoughEggsApplePie) {
+            System.out.println("Яблочный пирог не приготовить. Нехватает: молока и пудры");
+            hasErrorApplePie = true;
+        }
+        else if (enoughApplesApplePie && !enoughMilkApplePie && enoughPowderApplePie && !enoughEggsApplePie) {
+            System.out.println("Яблочный пирог не приготовить. Нехватает: молока и яиц");
+            hasErrorApplePie = true;
+        }
+        else if (enoughApplesApplePie && !enoughMilkApplePie && !enoughPowderApplePie && !enoughEggsApplePie) {
+            System.out.println("Яблочный пирог не приготовить. Нехватает: молока, пудры и яиц");
+            hasErrorApplePie = true;
+        }
+
+        //пудра проверка
+
+        else if (enoughApplesApplePie && enoughMilkApplePie && !enoughPowderApplePie && enoughEggsApplePie) {
+            System.out.println("Яблочный пирог не приготовить. Нехватает: пудры");
+            hasErrorApplePie = true;
+        }
+        else if (enoughApplesApplePie && enoughMilkApplePie && !enoughPowderApplePie && !enoughEggsApplePie) {
+            System.out.println("Яблочный пирог не приготовить. Нехватает: пудры и яиц");
+            hasErrorApplePie = true;
+        }
+        //яйца проверка
+
+        else if (enoughApplesApplePie && enoughMilkApplePie && enoughPowderApplePie && !enoughEggsApplePie) {
+            System.out.println("Яблочный пирог не приготовить. Нехватает: яиц");
+            hasErrorApplePie = true;
+        }
+        if (enoughApplesApplePie && enoughMilkApplePie && enoughPowderApplePie && enoughEggsApplePie ) {
             System.out.println("Яблочный пирог");
-        } else {
-            System.out.println("Нехватает ингредиентов для яблочного пирога");
         }
     }
 }
