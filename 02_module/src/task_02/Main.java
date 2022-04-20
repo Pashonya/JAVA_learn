@@ -15,31 +15,31 @@ public class Main {
 
         if (houstonAge <= geraltAge && houstonAge <= basiaAge) {
             min = houstonAge;
-        } else if (geraltAge <= houstonAge && geraltAge <= basiaAge) {
-            min = geraltAge;
-        } else {
-            System.out.println("min = basiaAge");
         }
+        else if (geraltAge <= houstonAge && geraltAge <= basiaAge) {
+            min = geraltAge;
+        }
+        else { min = basiaAge; }
 
         //middle
 
         if ((houstonAge <= geraltAge && houstonAge >= basiaAge) || (houstonAge >= geraltAge && houstonAge <= basiaAge)) {
             middle = houstonAge;
-        } else if ((geraltAge <= houstonAge && geraltAge >= basiaAge) || (geraltAge >= houstonAge && geraltAge <= basiaAge)) {
-            middle = geraltAge;
-        } else {
-            System.out.println("middle = basiaAge");
         }
+        else if ((geraltAge <= houstonAge && geraltAge >= basiaAge) || (geraltAge >= houstonAge && geraltAge <= basiaAge)) {
+            middle = geraltAge;
+        }
+        else { middle = basiaAge; }
 
         //max
 
-        if (houstonAge >= geraltAge && houstonAge >= basiaAge)
+        if (houstonAge >= geraltAge && houstonAge >= basiaAge) {
             max = houstonAge;
+        }
         else if (geraltAge >= houstonAge && geraltAge >= basiaAge) {
             max = geraltAge;
-        } else {
-            System.out.println("max = basiaAge");
         }
+        else { max = basiaAge; }
 
         System.out.println("Minimal Age: " + min);
         System.out.println("Middle Age: " + middle);
