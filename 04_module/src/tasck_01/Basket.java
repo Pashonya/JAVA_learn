@@ -11,30 +11,7 @@ public class Basket {
     public Basket() {
         increaseCount(1);
         items = "Список товаров:";
-        this.limit = 1000;
-    }
-
-    public Basket(int limit) {
-        this();
-        this.limit = limit;
-    }
-
-    public Basket(String items, int totalPrice) {
-        this();
-        this.items = this.items + items;
-        this.totalPrice = totalPrice;
-
-    }
-
-    public Basket (String items, int totalPrice, int totalWeight) {
-        this();
-        this.items = this.items + items;
-        this.totalPrice = totalPrice;
-        this.totalWeight =totalWeight;
-    }
-
-    public static int getCount() {
-        return count;
+        this.limit = 10000;
     }
 
     public static void increaseCount(int count) {
@@ -46,58 +23,31 @@ public class Basket {
     }
 
     public void add(String name, int price, int count) {
-        boolean error = false;
-        if (contains(name)) {
-            error = true;
-        }
 
-        if (totalPrice + count * price >= limit) {
-            error = true;
-        }
+        if (!contains(name) && (totalPrice + count * price < limit)) {
 
-        if (error) {
+            items = items + "\n" + name + " - " +
+                    count + " шт. - " + price + " руб." + ", масса - ";
+            totalPrice = totalPrice + count * price;
+        } else {
             System.out.println("Error occured :(");
             return;
         }
-
-        items = items + "\n" + name + " - " +
-                count + " шт. - " + price + " руб." + ", масса - ";
-        totalPrice = totalPrice + count * price;
-
     }
+
     public void add(String name, int price, int count, double weight) {
-        boolean error = false;
-        if (contains(name)) {
-            error = true;
-        }
 
-        if (totalPrice + count * price >= limit) {
-            error = true;
-        }
+        if (!contains(name) && (totalPrice + count * price < limit)) {
 
-        if (error) {
+            items = items + "\n" + name + " - " +
+                    count + " шт. - " + price + " руб." + ", масса - " + weight + " кг";
+            totalPrice = totalPrice + count * price;
+            totalWeight = totalWeight + weight * count;
+        } else {
             System.out.println("Error occured :(");
             return;
         }
 
-        items = items + "\n" + name + " - " +
-                count + " шт. - " + price + " руб." + ", масса - " + weight + " кг";
-        totalPrice = totalPrice + count * price;
-        totalWeight = totalWeight + weight * count;
-    }
-
-    public void clear() {
-        items = "";
-        totalPrice = 0;
-        totalWeight = 0;
-    }
-
-    public int getTotalPrice() {
-        return totalPrice;
-    }
-
-    public double getTotalWeight() {
-        return totalWeight;
     }
 
     public boolean contains(String name) {
