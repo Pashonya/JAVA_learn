@@ -2,8 +2,8 @@ package tasck_01;
 
 public class Elevator {
 
-    public int maxFloor = 26;
-    public int minFloor = -3;
+    public int maxFloor;
+    public int minFloor;
     public int currentFloor = 1;
 
 
@@ -35,7 +35,7 @@ public class Elevator {
                     break;
                 }
             }
-        } else if (floor > currentFloor) {
+        } else  {
             while (true) {
                 moveUp();
                 if (currentFloor != 0) {
