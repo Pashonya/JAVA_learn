@@ -8,7 +8,8 @@ public class Main {
 
         int value = new Scanner(System.in).nextInt();
 
-        for (int i = 1; i <= value; i = i + 1) {
+        for (int i = 1; i <= value; i++) {
+
 
             for (int j = value; j >= 1; j--) {
                 if (value % j != 0)
