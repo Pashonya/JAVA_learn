@@ -6,11 +6,14 @@ public class Product {
 
     private final String name;
     private int price;
-    private barCode;
+    private int barCode;
 
     public Product(String name) {
         this.name = name;
 
+    }
+    public int getBarCode() {
+        return barCode;
     }
 
     public String getName() {
