@@ -8,8 +8,18 @@ public class Basket {
     private int limit;
     private double totalWeight = 0;
 
+    private static int basketCount = 0;
+
+    private static class AllBaskets {
+        static int totalCost;
+        static int totalProducts;
+        static int averagePrice;
+        static int averageCost;
+    }
+
     public Basket() {
         increaseCount(1);
+        basketCount = basketCount + 1;
         items = "Список товаров:";
         this.limit = 10000;
     }
@@ -20,6 +30,10 @@ public class Basket {
 
     public void add(String name, int price) {
         add(name, price, 1);
+        AllBaskets.totalProducts += count;
+        AllBaskets.totalCost += price * count;
+        AllBaskets.averageCost = AllBaskets.totalCost / basketCount;
+        AllBaskets.averagePrice = AllBaskets.totalCost / AllBaskets.totalProducts;
     }
 
     public void add(String name, int price, int count) {
@@ -33,6 +47,26 @@ public class Basket {
             System.out.println("Error occured :(");
             return;
         }
+        AllBaskets.totalProducts += count;
+        AllBaskets.totalCost += price * count;
+        AllBaskets.averageCost = AllBaskets.totalCost / basketCount;
+        AllBaskets.averagePrice = AllBaskets.totalCost / AllBaskets.totalProducts;
+    }
+
+    public static int getItemCountForAllBaskets() {
+        return AllBaskets.totalProducts;
+    }
+
+    public static int getCostForAllBaskets() {
+        return AllBaskets.totalCost;
+    }
+
+    public static int getAverageCostForAllBaskets() {
+        return AllBaskets.averageCost;
+    }
+
+    public static int getAveragePriceForAllBaskets() {
+        return AllBaskets.averagePrice;
     }
 
     public void add(String name, int price, int count, double weight) {
@@ -47,7 +81,10 @@ public class Basket {
             System.out.println("Error occured :(");
             return;
         }
-
+        AllBaskets.totalProducts += count;
+        AllBaskets.totalCost += price * count;
+        AllBaskets.averageCost = AllBaskets.totalCost / basketCount;
+        AllBaskets.averagePrice = AllBaskets.totalCost / AllBaskets.totalProducts;
     }
 
     public boolean contains(String name) {
@@ -61,7 +98,14 @@ public class Basket {
         } else {
             System.out.println(items);
             System.out.println("Общий вес товаров: " + totalWeight + " кг");
+            System.out.println("Общее количество всех товаров - " + Basket.getItemCountForAllBaskets());
+            System.out.println("Общаа стоисмость всех товаров - " + Basket.getCostForAllBaskets());
+            System.out.println();
+            System.out.println("Общее количество корзин - " + basketCount);
+            System.out.println("Средняя стоимость корзины  - " + Basket.getAverageCostForAllBaskets());
+            System.out.println("Средняя цена товара - " + Basket.getAveragePriceForAllBaskets());
+            System.out.println();
         }
     }
-}
 
+}
